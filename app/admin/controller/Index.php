@@ -9,10 +9,10 @@ namespace app\admin\controller;
 
 class Index
 {
-    public function index()
-    {
-        return 'admin1123123';
-    }
+//    public function index()
+//    {
+//        return 'admin1123123';
+//    }
 
     public function edis()
     {
