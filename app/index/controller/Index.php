@@ -1,7 +1,10 @@
 <?php
-declare (strict_types = 1);
+declare (strict_types=1);
 
 namespace app\index\controller;
+
+use think\facade\Cache;
+use think\facade\Env;
 
 class Index
 {
@@ -13,5 +16,15 @@ class Index
     public function hello($name = 'ThinkPHP6')
     {
         return 'hello,' . $name;
+    }
+
+    public function admins()
+    {
+//        var_dump( Env::get('database.type'));
+//        exit();
+        //key value 存有效期(s)
+        Cache::store('redis')->set('name', 'hjw', 10);
+        $name = Cache::store('redis')->get('name','123');
+        var_dump($name);
     }
 }
